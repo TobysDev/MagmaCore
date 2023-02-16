@@ -8,6 +8,7 @@ commands:
   reloadconfig:
   gmc:
   gms:
+  gma:
 permissions:
   creative.use:
     description: Allows players to switch to creative mode.
