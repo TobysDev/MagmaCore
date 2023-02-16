@@ -24,16 +24,31 @@ public class Creative implements CommandExecutor {
             return true;
         }
 
-        Player player = (Player) sender;
+        if (args.length < 1) {
+            sender.sendMessage(ChatColor.RED + "You must specify a target player.");
+            return false;
+        }
+
+        if (!sender.hasPermission("creative.others")) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to change other players' gamemode.");
+            return true;
+        }
+
+        Player targetPlayer = main.getServer().getPlayer(args[0]);
+        if (targetPlayer == null) {
+            sender.sendMessage(ChatColor.RED + "Player not found.");
+            return false;
+        }
+
         String gamemodeChangeMessage = main.getConfig().getString("GamemodeChangeMessage");
-        gamemodeChangeMessage = PlaceholderAPI.setPlaceholders(player, gamemodeChangeMessage);
+        gamemodeChangeMessage = PlaceholderAPI.setPlaceholders(targetPlayer, gamemodeChangeMessage);
         gamemodeChangeMessage = ChatColor.translateAlternateColorCodes('&', gamemodeChangeMessage);
-        player.sendMessage(gamemodeChangeMessage);
-        player.setGameMode(GameMode.CREATIVE);
+        targetPlayer.sendMessage(gamemodeChangeMessage);
+        targetPlayer.setGameMode(GameMode.CREATIVE);
 
         String gamemode = "CREATIVE";
         gamemodeChangeMessage = gamemodeChangeMessage.replace("%gamemode%", gamemode);
-        player.sendMessage(gamemodeChangeMessage);
+        targetPlayer.sendMessage(gamemodeChangeMessage);
 
         return true;
     }
