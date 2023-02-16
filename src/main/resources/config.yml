@@ -1,0 +1,5 @@
+JoinMessage: "&aWelcome to my server %player_name%"
+FirstJoinMessage: "&aWelcome to my server for first time %player_name%"
+LeaveMessage: "&c%player% bye"
+ReloadMessage: "&aAll configuration files has been reloaded"
+gamemodeChangeMessage: "&7You have changed gamemode to &a%gamemode%"

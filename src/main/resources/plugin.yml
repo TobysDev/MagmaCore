@@ -1,0 +1,10 @@
+name: MagmaCore
+version: '${project.version}'
+main: dev.tobys.magma.Magma
+api-version: 1.16
+authors: [ Tobys__ ]
+softdepend: [PlaceholderAPI]
+commands:
+  reloadconfig:
+  gmc:
+  gms:
