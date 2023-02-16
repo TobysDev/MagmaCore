@@ -13,6 +13,3 @@ permissions:
   creative.use:
     description: Allows players to switch to creative mode.
     default: op
-  creative.others:
-    description: Allows players to switch other players to creative mode.
-    default: op○○c○
