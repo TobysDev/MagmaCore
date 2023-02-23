@@ -28,8 +28,7 @@ public class Survival implements CommandExecutor {
         String gamemodeChangeMessage = main.getConfig().getString("GamemodeChangeMessage");
         gamemodeChangeMessage = PlaceholderAPI.setPlaceholders(player, gamemodeChangeMessage);
         gamemodeChangeMessage = ChatColor.translateAlternateColorCodes('&', gamemodeChangeMessage);
-        player.sendMessage(gamemodeChangeMessage);
-        player.setGameMode(GameMode.CREATIVE);
+        player.setGameMode(GameMode.SURVIVAL);
 
         String gamemode = "SURVIVAL";
         gamemodeChangeMessage = gamemodeChangeMessage.replace("%gamemode%", gamemode);
